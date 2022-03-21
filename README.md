@@ -1,0 +1,3 @@
+# Stereo Camera and Solid State Lidar Object Detection on Small Delivery Robot 
+
+Stereo camera is popular in object detection due to its dense data. It works by matching the key points of the left and right images, using the geometric constraints to calculate the depth map, and then feed these into a neural network. Due to the geometric constraints, it only works for a certain range of objects and is unstable for some objects. Here we present a demo to stablize the detection using solid state lidars, which is a very cost efficient solution especially for small and slow robots. 
