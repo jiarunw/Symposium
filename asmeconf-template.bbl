@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI \discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\urlprefix\url{#1#2}}
+
+\bibitem{DBLP:journals/corr/abs-1902-09738}
+Li, Peiliang, Chen, Xiaozhi and Shen, Shaojie.
+\newblock \enquote{Stereo {R-CNN} based 3D Object Detection for Autonomous
+  Driving.}
+\newblock \textit{CoRR} Vol. abs/1902.09738.
+\newblock \eprint{1902.09738}, \urlprefix\url{http://arxiv.org/abs/1902.09738}.
+
+\bibitem{7780459}
+He, Kaiming, Zhang, Xiangyu, Ren, Shaoqing and Sun, Jian.
+\newblock \enquote{Deep Residual Learning for Image Recognition.}
+\newblock \textit{2016 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}: pp. 770--778. 2016.
+\newblock \doi{10.1109/CVPR.2016.90}.
+
+\end{thebibliography}

@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: asmeconf-template.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: asmeconf.bst
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+Database file #1: asmeconf-sample.bib
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Warning--there's an eprint but no archive in DBLP:journals/corr/abs-1902-09738
+You've used 2 entries,
+            3084 wiz_defined-function locations,
+            733 strings with 6589 characters,
+and the built_in function-call counts, 933 in all, are:
+= -- 67
+> -- 23
+< -- 2
++ -- 9
+- -- 7
+* -- 54
+:= -- 109
+add.period$ -- 11
+call.type$ -- 2
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 95
+empty$ -- 89
+format.name$ -- 9
+if$ -- 206
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 22
+newline$ -- 22
+num.names$ -- 2
+pop$ -- 40
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 24
+stack$ -- 0
+substring$ -- 28
+swap$ -- 60
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 4
+width$ -- 3
+write$ -- 35
+(There was 1 warning)
