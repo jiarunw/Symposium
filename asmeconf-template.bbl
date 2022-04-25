@@ -22,4 +22,11 @@ He, Kaiming, Zhang, Xiangyu, Ren, Shaoqing and Sun, Jian.
   Recognition (CVPR)}: pp. 770--778. 2016.
 \newblock \doi{10.1109/CVPR.2016.90}.
 
+\bibitem{DBLP:journals/corr/RenHG015}
+Ren, Shaoqing, He, Kaiming, Girshick, Ross~B. and Sun, Jian.
+\newblock \enquote{Faster {R-CNN:} Towards Real-Time Object Detection with
+  Region Proposal Networks.}
+\newblock \textit{CoRR} Vol. abs/1506.01497.
+\newblock \eprint{1506.01497}, \urlprefix\url{http://arxiv.org/abs/1506.01497}.
+
 \end{thebibliography}

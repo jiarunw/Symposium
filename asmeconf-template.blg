@@ -7,45 +7,46 @@ Reallocating 'name_of_file' (item size: 1) to 16 items.
 Database file #1: asmeconf-sample.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Warning--there's an eprint but no archive in DBLP:journals/corr/abs-1902-09738
-You've used 2 entries,
+Warning--there's an eprint but no archive in DBLP:journals/corr/RenHG015
+You've used 3 entries,
             3084 wiz_defined-function locations,
-            733 strings with 6589 characters,
-and the built_in function-call counts, 933 in all, are:
-= -- 67
-> -- 23
-< -- 2
-+ -- 9
-- -- 7
-* -- 54
-:= -- 109
-add.period$ -- 11
-call.type$ -- 2
+            741 strings with 6843 characters,
+and the built_in function-call counts, 1272 in all, are:
+= -- 86
+> -- 36
+< -- 3
++ -- 14
+- -- 11
+* -- 80
+:= -- 149
+add.period$ -- 16
+call.type$ -- 3
 change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 95
-empty$ -- 89
-format.name$ -- 9
-if$ -- 206
+cite$ -- 5
+duplicate$ -- 132
+empty$ -- 121
+format.name$ -- 14
+if$ -- 276
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 22
-newline$ -- 22
-num.names$ -- 2
-pop$ -- 40
+int.to.str$ -- 3
+missing$ -- 32
+newline$ -- 28
+num.names$ -- 3
+pop$ -- 55
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 24
+skip$ -- 28
 stack$ -- 0
 substring$ -- 28
-swap$ -- 60
-text.length$ -- 2
+swap$ -- 85
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 4
-width$ -- 3
-write$ -- 35
-(There was 1 warning)
+warning$ -- 2
+while$ -- 5
+width$ -- 4
+write$ -- 48
+(There were 2 warnings)

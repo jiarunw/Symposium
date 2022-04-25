@@ -201,25 +201,44 @@ cost efficient solution especially for small and slow robots.
 %%%%%%%%%  BODY OF PAPER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-The main goal of this work is to stabilize the detection of objects using a stereo camera and lidar. 
-The 
-% \cite{DBLP:journals/corr/abs-1902-09738}
+In the industry of autonomous delivery, the velodyne lidar is the most important sensor. It is used to detect objects in the environment with multiple threads. However, due to the demand of high speed of real vehicles, the density of its threads are required to be very high. For small delivery robots, many researchers directly deploys the velodyne lidar, which might not be necessary given the speed and height of those small vehicles. In this paper, we propose a novel method to utilize a very cost efficient solid state lidar combined with stereo camera to stabilize the detection of objects on small delivery robots.
+
+\section{System Design}
+As is shown in figure \ref{sys}, the delivery robot can be divided into 6 parts: stereo camera, router, battery, solid-state lidar and the processor. The part list is shown in table \ref{parts}.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{p{0.2\linewidth} p{0.2\linewidth} p{0.2\linewidth} p{0.2\linewidth}}
+    \hline
+        ID & Category & Part & Qty \\ \hline
+        SAFEAI001 & Joystick Controllers & Mecanum Wheel Controller & 1 \\ 
+        SAFEAI002 & Joystick Controllers & Regular Wheel Controller & 1 \\ 
+        SAFEAI003 & LiDARs & Solid-state Livox Mid-70 Lidars & 3 \\ 
+        SAFEAI004 & LiDARs & SLAMTec Lidars & 2 \\ 
+        SAFEAI005 & Cameras & ZED Camera & 2 \\ 
+        SAFEAI006 & Power Supplies & Krisdonia Power Bank & 1 \\ 
+        SAFEAI007 & Power Supplies & MAXOAK Power Bank & 2 \\ 
+        SAFEAI008 & Computers & AGX Jetson & 2 \\ 
+        SAFEAI009 & Internet communications & Router & 2 \\ \hline
+    \end{tabular}
+	\caption{Part list}\label{parts}
+\end{table}
+
+
+\paragraph{Stereo camera} The stereo camera is used for the detection of dynamic obstacles such as human and vehicles. Though the depth obtained by the stereo camera is not as accurate as the lidar, its object detection ability is a lot more better due to the RGB triple input channels.
+\paragraph{Solid-state lidar} The lidar is used in multiple tasks: mapping, localization and object detection. During the mapping task, the lidar scans around a certain area and reconstructs a 3D point cloud map of the surroundings. In the localization task, the lidar scans forward and locate the robot using a Normal Distribution Transform matching method, which matches the distribution of point cloud of previous map and the current scanning. In the object detection task, the lidar gets the semantics of the current scanning.
+\paragraph{Processor} The processor is used to process the data obtained by the lidar and the stereo camera. The processor uses a neural network that can process the data and generate the semantics of the current scanning.
+\paragraph{Battery} There are 2 types of batteries, one is the chassis battery which is used to power the chassis and move the whole vehicle. Another is the power banks which are used to power the processor, lidars, and the router. The rated power of the chassis and the power banks are different so they have to be separated.
+\paragraph{Router} The router is used to connect the lidar and the processor. It plays an important role in the synchronization process between the lidar and the processor.
+
 
 \section{Methods}
 
-The stereo camera object detection can be decomposed into several parts: feature extraction, reigion proposal, reigion of intersection alignment, keypoint prediction and finally 3D bounding box estimation, which involves deep neural networks such as ResNet and binocular geometric constraints. In the following experiment, the lidar point clouds are used to verify the detection.
-\paragraph{Feature extraction} The ResNet is one of the most commonly used feature extraction methods. Its architecture is shown in figure \ref{res}.
-\begin{equation}
-    \begin{aligned}
-&v_{t}=\left(y-\frac{h}{2}\right) /\left(z-\frac{w}{2} \sin \theta-\frac{l}{2} \cos \theta\right) \\
-&u_{l}=\left(x-\frac{w}{2} \cos \theta-\frac{l}{2} \sin \theta\right) /\left(z+\frac{w}{2} \sin \theta-\frac{l}{2} \cos \theta\right) \\
-&u_{p}=\left(x+\frac{w}{2} \cos \theta-\frac{l}{2} \sin \theta\right) /\left(z-\frac{w}{2} \sin \theta-\frac{l}{2} \cos \theta\right) \\
-&\quad \cdots \\
-&u_{r}^{\prime}=\left(x-b+\frac{w}{2} \cos \theta+\frac{l}{2} \sin \theta\right) /\left(z-\frac{w}{2} \sin \theta+\frac{l}{2} \cos \theta\right)
-\end{aligned}
-\end{equation}
+Stereo R-CNN based 3D Object Detection \cite{DBLP:journals/corr/abs-1902-09738} is deployed in the system. It can be decomposed into several parts: feature extraction, reigion proposal, reigion of intersection alignment, keypoint prediction and 3D bounding box estimation, which involves deep neural networks such as ResNet and binocular geometric constraints. In the following experiment, the lidar point clouds are used to verify the detection.
+\paragraph{Feature extraction} The ResNet \cite{7780459} is one of the most commonly used feature extraction methods. Its architecture is shown in figure \ref{res}. Unlike the regular sequential CNNs, the ResNet adds the forward propagation from the input of each blocks directly to their output. 
+\paragraph{Reigion proposal} The Faster R-CNN network\cite{DBLP:journals/corr/RenHG015} is used to propose the regions of interest. It can be divided into 3 steps: anchor generation, foreground-background classification and bounding box regression. The anchors are generated in the feature space of the output of the feature extraction backbone. They are mapped back to the image regions according to the aspect ratios and scales, which are all trainable parameters. 
+\paragraph{Region of intersection alignment} Given the ground truth bounding boxes, the candidate boxes are further classified into foreground or background using the overlapping ratio with the ground truth as criterion. The ground truth is a heavy work which requirs a lot of human resources.
+\paragraph{Keypoint prediction and 3D bounding box estimation} After the region of intersection is calculated, the network can do a regression to estimate the position and size of the bounding boxes using backpropagation.
 
-\paragraph{Reigion proposal}
 
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{resnet.png}
@@ -227,14 +246,49 @@ The stereo camera object detection can be decomposed into several parts: feature
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Design}
-As is shown in figure \ref{sys}, the delivery robot can be divided into 6 parts: stereo camera, router, battery, solid-state lidar and the processor. 
-\paragraph{Stereo camera} The stereo camera is used for the detection of dynamic obstacles such as human and vehicles. Though the depth obtained by the stereo camera is not as accurate as the lidar, its object detection ability is a lot more better due to the RGB triple input channels.
-\paragraph{Solid-state lidar} The lidar is used in multiple tasks: mapping, localization and object detection. 
+
 \section{Experiment}
+\begin{figure*}
+	\center
+	\includegraphics[width=0.9\textwidth]{flow_chart.png}
+	\caption{flow chart}\label{flow}
+	\end{figure*}
+The over all work flow is shown in figure \ref{flow}. Before the actual experiment begins, the stereo camera is calibrated using the intrinsic matrix $K$ and the distortion coefficients $DC$, which are defined as:
+\begin{equation}
+	K=\left[\begin{array}{ccc}f_{x} & 0 & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1\end{array}\right]
+\end{equation}
+\begin{equation}
+	DC =\left[\begin{array}{lllll}k_{1} & k_{2} & p_{1} & p_{2} & k_{3}\end{array}\right]
+\end{equation}
+The corresponding parameters' values are shown in table \ref{calib}.
 
-Figure 1 and 2 shows 2 views of the stereo camera object detection result of a person. The results are shown in blue bounding box with green vertices. The strips in the figures are the lidar point cloud. It is shown that the person in the bounding box is closely surrounded by the strips, which shows that the lidar point cloud overlaps with the camera object detection. Figure 3 shows the path planning result of the vehicle. The green line is the global planning path, the red line is the local planning path and the blue line is the localization.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}}
+    \hline
 
+	~ & Left lence & Right lence \\ \hline
+	$f_x$ & 525.575 & 528.400 \\ 
+	$f_y$ & 525.1050 & 527.8600 \\ 
+	$c_x$ & 355.7350 & 627.9750 \\ 
+	$c_y$ & 350.3825 & 370.8590 \\ 
+	$k_1$ & -0.0408 & -0.0453 \\ 
+	$k_2$ & 0.0081 & 0.0140 \\ 
+	$p_1$ & 0.0000 & 0.0000 \\ 
+	$p_2$ & 0.0000 & 0.0000 \\ 
+	$k_3$ & -0.0041 & -0.0041 \\ \hline
+    \end{tabular}
+	\caption{Camera intrinsic parameters}\label{calib}
+\end{table}
+
+\paragraph{Perception} Besides the Solid-state lidar and the stereo camera, which is introduced in the previous section, there are 2 more sensors: the IMU and the motor encoder. The IMU is used to measure the dynamic properties of the robot. For example the acceleration and the angular acceleration. The veolcity and the estimated position can be obtained by integrating the acceleration. It should be noticed that the position obtained here can not be used directly because there is drifts due to the intrinsic noise of the IMU, hence the point cloud matching localization of the lidar is necessary. The motor encoder is used to measure the rotational speed of the wheels so that the commanded speed can be maintained using a PID control policy.
+\paragraph{Simultaneously Localization and Mapping} There are 2 sensors in charge of the localization process: the IMU and the lidar. The IMU is stable as long as there is no strong magnetic field around. It will never be influenced by the surrounding obstacles. However, it will have large drift upon small errors of the accelerometer. On the other hand, the lidar point cloud matching method will correct it self when more points are detected. However, the lidar is very sensitive with respect to the envirnonment. Given the pros and cons of these 2 sensors. The final localization is done by merging these 2 sensors' data using the Kalmen filter.
+Figure \ref{path_plan2} shows the cost map of the route between CMU's Hunt library and gym.  
+\paragraph{Planning} The planning is divided into global planning and local planning. The global planning is done by using the A* algorithm and the local planning is done by DWA algorithm. The A* algorithm is a breath first search based method with weights added to each steps of the exploration. The Dynamic Window Approach is a local planning method that searches the robot control space $u$, where:
+\begin{equation}
+	u=\left[\begin{array}{c}\dot{x}\\\dot{y}\\\dot{\theta}\end{array}\right]
+\end{equation}
+\paragraph{Control} The control is done by using the PID control policy. The PID control policy is a feedback control policy that is used to maintain the speed of the robot.
 %%%%%%%%%%%%% begin figure %%%%%%%%%%%%%%%%%
 
 %% captions go below figures
@@ -246,22 +300,28 @@ Figure 1 and 2 shows 2 views of the stereo camera object detection result of a p
 
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{Planning_psed.png}
-\caption{Cost map}
+\caption{Cost map}\label{path_plan}
 \end{figure}
+
+\begin{figure}
+	\centering\includegraphics[width=0.7\linewidth]{Hunts_UC_2D.png}
+	\caption{Cost map for another route}\label{path_plan2}
+	\end{figure}
  
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{obj_det.png}
-\caption{Object detection verified by lidar}
+\caption{Object detection verified by lidar}\label{obj_det}
 \end{figure}
 
-% \begin{multicols}{2}
 
-\begin{figure*}[h]
-\center
-\includegraphics[width=0.9\textwidth]{flow_chart.png}
-\caption{flow chart}
-\end{figure*}
-% \end{multicols}
+
+
+\begin{figure*}
+	\center
+	\includegraphics[width=0.9\textwidth]{map_psed_hunt.png}
+	\caption{Comparison with google map}\label{hunt}
+	\end{figure*}
+
 
 %%%%%%%%%%%%% end figure %%%%%%%%%%%%%%%%%%%
 
@@ -272,7 +332,9 @@ Figure 1 and 2 shows 2 views of the stereo camera object detection result of a p
 
 \section{Results}
 
-According to the experiment, the stereo camera’s object detection is relatively accurate even under indoor
+Figure \ref{obj_det} shows 2 views of the stereo camera object detection result of a person. The results are shown in blue bounding box with green vertices. The strips in the figures are the lidar point cloud. It is shown that the person in the bounding box is closely surrounded by the strips, which shows that the lidar point cloud overlaps with the camera object detection. Figure \ref{path_plan} shows the planning result of the vehicle. The green line is the global planning path, the red line is the local planning path and the blue line is the localization.
+
+According to the figures, the stereo camera’s object detection is relatively accurate even under indoor
 envirnonment. The lidar’s point cloud is also shown to have a very good alignment with the depth map given by
 the stereo camera.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,7 +343,8 @@ the stereo camera.
 %%%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgments}
-Place any acknowledgments here.
+
+Thanks to Professor Ding and all members in the team of Safe AI Scout at Safe AI Lab, the system of our prototype is developed in a very smooth way. We are very grateful to the members of the team not only for their hard work and dedication but also for their suggestions and feedbacks. 
 
 
 %%%  REFERENCES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -307,22 +370,21 @@ Place any acknowledgments here.
 \newpage
 \section[Camera Lidar Calibration]{Codes for Camera Lidar Calibration}\label{appendix:a}
 
-\begin{minted}{python} 
-import pyzed.sl as sl
-import cv2
-init_params = sl.InitParameters()
-# runtime = sl.RuntimeParameters()
-init_params.camera_resolution = sl.RESOLUTION.HD2K
-# init_params.camera_fps = 30
-zed = sl.Camera()
-zed.open(init_params)
-if not zed.is_opened():
-  print("Opening ZED Camera...")
-zed.grab(init_params)
-image = sl.Mat()
+\begin{minted}[linenos,tabsize=2,breaklines]{python} 
+import pyzed.sl as sl # Import the stereo camera's library
+import cv2 # Import OpenCV
+init_params = sl.InitParameters() # Create a sl.InitParameters object
+init_params.camera_resolution = sl.RESOLUTION.HD2K # Use HD2K resolution
+zed = sl.Camera() # Create a camera object
+zed.open(init_params) # Open the camera
+if not zed.is_opened(): # Check if camera opened successfully
+	exit()
+print("Opening ZED Camera...") # Remind the user that the camera is opening
+zed.grab(init_params) # Grab a new image
+image = sl.Mat() # Create a sl.Mat object
 
 zed.retrieve_image(image) # Retrieve the left image
-cv2.imwrite("test.png", image.get_data())
+cv2.imwrite("test.png", image.get_data()) # Save the image
 \end{minted} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

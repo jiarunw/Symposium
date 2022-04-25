@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pyzed.sl} \PYG{k}{as} \PYG{n+nn}{sl} \PYG{c+c1}{\PYGZsh{} Import the stereo camera\PYGZsq{}s library}
+\PYG{k+kn}{import} \PYG{n+nn}{cv2} \PYG{c+c1}{\PYGZsh{} Import OpenCV}
+\PYG{n}{init\PYGZus{}params} \PYG{o}{=} \PYG{n}{sl}\PYG{o}{.}\PYG{n}{InitParameters}\PYG{p}{()} \PYG{c+c1}{\PYGZsh{} Create a sl.InitParameters object}
+\PYG{n}{init\PYGZus{}params}\PYG{o}{.}\PYG{n}{camera\PYGZus{}resolution} \PYG{o}{=} \PYG{n}{sl}\PYG{o}{.}\PYG{n}{RESOLUTION}\PYG{o}{.}\PYG{n}{HD2K} \PYG{c+c1}{\PYGZsh{} Use HD2K resolution}
+\PYG{n}{zed} \PYG{o}{=} \PYG{n}{sl}\PYG{o}{.}\PYG{n}{Camera}\PYG{p}{()} \PYG{c+c1}{\PYGZsh{} Create a camera object}
+\PYG{n}{zed}\PYG{o}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{init\PYGZus{}params}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Open the camera}
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{zed}\PYG{o}{.}\PYG{n}{is\PYGZus{}opened}\PYG{p}{():} \PYG{c+c1}{\PYGZsh{} Check if camera opened successfully}
+	\PYG{n}{exit}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Opening ZED Camera...\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Remind the user that the camera is opening}
+\PYG{n}{zed}\PYG{o}{.}\PYG{n}{grab}\PYG{p}{(}\PYG{n}{init\PYGZus{}params}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Grab a new image}
+\PYG{n}{image} \PYG{o}{=} \PYG{n}{sl}\PYG{o}{.}\PYG{n}{Mat}\PYG{p}{()} \PYG{c+c1}{\PYGZsh{} Create a sl.Mat object}
+
+\PYG{n}{zed}\PYG{o}{.}\PYG{n}{retrieve\PYGZus{}image}\PYG{p}{(}\PYG{n}{image}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Retrieve the left image}
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{imwrite}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}test.png\PYGZdq{}}\PYG{p}{,} \PYG{n}{image}\PYG{o}{.}\PYG{n}{get\PYGZus{}data}\PYG{p}{())} \PYG{c+c1}{\PYGZsh{} Save the image}
+\end{Verbatim}
