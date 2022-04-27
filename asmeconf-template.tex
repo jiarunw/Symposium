@@ -201,7 +201,13 @@ cost efficient solution especially for small and slow robots.
 %%%%%%%%%  BODY OF PAPER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-In the industry of autonomous delivery, the velodyne lidar is the most important sensor. It is used to detect objects in the environment with multiple threads. However, due to the demand of high speed of real vehicles, the density of its threads are required to be very high. For small delivery robots, many researchers directly deploys the velodyne lidar, which might not be necessary given the speed and height of those small vehicles. In this paper, we propose a novel method to utilize a very cost efficient solid state lidar combined with stereo camera to stabilize the detection of objects on small delivery robots.
+In the industry of autonomous delivery, it is widely proved that the perception part of the autonomous system is the bottle neck. Due to the complicated environment of the real world, it is hard for the vehicle to navigate around. The vehicle it self must get a very detailed and precise information of what the surrounding is like.
+
+In order to achieve that, 2 types of sensors are invented, the cameras and the lidars, both of which uses the lights to percept the surrounding. However, both camera and lidars have pros and cons are always used together to get rid of the disadvantages of each other. The camera is similar to human's eyes. It captures the lights reflected from the surrounding objects projected on a 2D plane. However the reflectional lights can be confusing because the image captured by the camera and the real environment is not necessary  one-to-one mapping. On contrary, the lidars launch lights it self and calculates the distance according to the time interval between the launch time and the receiving time. This is very precise in terms of the depth measurement, however lacks of semantics information due to the absence of colors. 
+
+Great efforts of the developmet of the lidars has been made to achieve a higher perception accuracy. For example, the velodyne lidar is the most important sensor. It is used to detect objects in the environment with multiple threads. However, due to the demand of high speed of real vehicles, the density of its threads are required to be very high. For small delivery robots, many researchers directly deploys the velodyne lidar, which might not be necessary given the speed and height of those small vehicles. 
+
+In this paper, a novel method to utilize a very cost efficient solid state lidar combined with stereo camera to stabilize the detection of objects on small delivery robots is proposed. We also established a prototype of the small autonomous delivery robot system and demonstrate the system's performance. This robot can navigate across within certain area within CMU campus given arbitrary initial position and target position. It is about half a person tall with omnidirectional wheels that can carry a small parcel.  
 
 \section{System Design}
 As is shown in figure \ref{sys}, the delivery robot can be divided into 6 parts: stereo camera, router, battery, solid-state lidar and the processor. The part list is shown in table \ref{parts}.
@@ -257,8 +263,18 @@ The over all work flow is shown in figure \ref{flow}. Before the actual experime
 \begin{equation}
 	K=\left[\begin{array}{ccc}f_{x} & 0 & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1\end{array}\right]
 \end{equation}
+Where $f_x$ and $f_y$ are the focal length along $x$ and $y$ axis. $c_x$ and $c_y$ are the offsets of the principal axis.
 \begin{equation}
 	DC =\left[\begin{array}{lllll}k_{1} & k_{2} & p_{1} & p_{2} & k_{3}\end{array}\right]
+\end{equation}
+Such that the radio and tangential distortion are given as:
+\begin{equation}
+	\begin{aligned}
+		&x_r=x\left(1+k_{1} r^{2}+k_{2} r^{4}+k_{3} r^{6}\right) \\
+		&y_r=y\left(1+k_{1} r^{2}+k_{2} r^{4}+k_{3} r^{6}\right) \\
+		&x_t=x+\left[2 p_{1} x y+p_{2}\left(r^{2}+2 x^{2}\right)\right] \\
+		&y_t=y+\left[p_{1}\left(r^{2}+2 y^{2}\right)+2 p_{2} x y\right]
+		\end{aligned}
 \end{equation}
 The corresponding parameters' values are shown in table \ref{calib}.
 
@@ -344,8 +360,11 @@ the stereo camera.
 
 \section*{Acknowledgments}
 
-Thanks to Professor Ding and all members in the team of Safe AI Scout at Safe AI Lab, the system of our prototype is developed in a very smooth way. We are very grateful to the members of the team not only for their hard work and dedication but also for their suggestions and feedbacks. 
+Thanks to Professor Ding and all members in the team of Safe AI Scout at Safe AI Lab, the system of our prototype is developed in a very smooth way. I am very grateful to the members of the team not only for their hard work and dedication but also for their suggestions and feedbacks. 
 
+The time at Safe AI Lab is very valuable. Not only did I established the software and hard ware system for an autonomous delivery robot, but also I got the opportunity to learn the techniques in order for a real world system to work. For example the software environment and the hardware environment are very important for the software development. Sometimes we spent days on the compatibility between software packages. I also learned that the cooling system is very important for the performance of the robot.
+
+I also want to say thank you to my mentors for their high level guidance for what the whole architecture of an autonomous robot will be like. This gives us a very clear idea of how to build a robot at the very beginning of our development. 
 
 %%%  REFERENCES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%

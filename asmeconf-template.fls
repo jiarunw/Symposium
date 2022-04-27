@@ -1552,6 +1552,8 @@ INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Re
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Regular-tlf-ot1.vf
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaX.tfm
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1r.tfm
+INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntxsy.vf
+INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txsys.tfm
 INPUT .\system.png
 INPUT .\system.png
 INPUT system.png
@@ -1648,8 +1650,8 @@ INPUT asmeconf-template.pyg
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\inconsolata\i4-ts1.enc
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\inconsolata\i4-t1-5.enc
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\newtx\ntx-ot1-tlf.enc
-INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\newtx\ntx-ec-tlf.enc
+INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ec.enc
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\type1\public\inconsolata\Inconsolata-zi4b.pfb
 INPUT C:\Users\13037\AppData\Local\Programs\MiKTeX\fonts\type1\public\inconsolata\Inconsolata-zi4b.pfb

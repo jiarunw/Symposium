@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.22)  25 APR 2022 02:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.22)  26 APR 2022 15:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1792,77 +1792,77 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 181.
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\T1/ntxtlf/m/n/10 Joystick
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\T1/ntxtlf/m/n/10 Mecanum
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
-[]|\T1/ntxtlf/m/n/10 Joystick
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
-[]|\T1/ntxtlf/m/n/10 Regular
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--215
-[]|\T1/ntxtlf/m/n/10 Solid-state
- []
-
-
-Underfull \hbox (badness 2393) in paragraph at lines 215--215
-\T1/ntxtlf/m/n/10 Livox Mid-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
-[]|\T1/ntxtlf/m/n/10 SLAMTec
- []
-
-
-Underfull \hbox (badness 4859) in paragraph at lines 217--217
-[]|\T1/ntxtlf/m/n/10 ZED Cam-
- []
-
-
-Underfull \hbox (badness 1983) in paragraph at lines 218--218
-[]|\T1/ntxtlf/m/n/10 Power Sup-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-[]|\T1/ntxtlf/m/n/10 Krisdonia
- []
-
-
-Underfull \hbox (badness 1983) in paragraph at lines 219--219
-[]|\T1/ntxtlf/m/n/10 Power Sup-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\T1/ntxtlf/m/n/10 Mecanum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
+[]|\T1/ntxtlf/m/n/10 Joystick
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
+[]|\T1/ntxtlf/m/n/10 Regular
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+[]|\T1/ntxtlf/m/n/10 Solid-state
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 221--221
+\T1/ntxtlf/m/n/10 Livox Mid-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
+[]|\T1/ntxtlf/m/n/10 SLAMTec
+ []
+
+
+Underfull \hbox (badness 4859) in paragraph at lines 223--223
+[]|\T1/ntxtlf/m/n/10 ZED Cam-
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 224--224
+[]|\T1/ntxtlf/m/n/10 Power Sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+[]|\T1/ntxtlf/m/n/10 Krisdonia
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 225--225
+[]|\T1/ntxtlf/m/n/10 Power Sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
 []|\T1/ntxtlf/m/n/10 MAXOAK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--221
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
 []|\T1/ntxtlf/m/n/10 Internet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--221
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
 \T1/ntxtlf/m/n/10 com-mu-ni-ca-
  []
 
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 8.19003pt on input line 223.
+(Font)              scaled to size 8.19003pt on input line 229.
 [1.1{C:/Users/13037/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 
@@ -1870,50 +1870,52 @@ LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 <resnet.png, id=31, 823.075pt x 456.70625pt>
 File: resnet.png Graphic file (type png)
 <use resnet.png>
-Package pdftex.def Info: resnet.png  used on input line 244.
+Package pdftex.def Info: resnet.png  used on input line 250.
 (pdftex.def)             Requested size: 180.09592pt x 99.93211pt.
 <flow_chart.png, id=32, 1127.84563pt x 500.68655pt>
 File: flow_chart.png Graphic file (type png)
 <use flow_chart.png>
-Package pdftex.def Info: flow_chart.png  used on input line 253.
+Package pdftex.def Info: flow_chart.png  used on input line 259.
 (pdftex.def)             Requested size: 487.8192pt x 216.55923pt.
 
-Overfull \hbox (10.27425pt too wide) in paragraph at lines 267--281
+Overfull \hbox (10.27425pt too wide) in paragraph at lines 283--297
  [][] 
  []
 
 [2.2 <./resnet.png>]
-<system.png, id=66, 946.4961pt x 743.8992pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<system.png, id=65, 946.4961pt x 743.8992pt>
 File: system.png Graphic file (type png)
 <use system.png>
-Package pdftex.def Info: system.png  used on input line 297.
+Package pdftex.def Info: system.png  used on input line 313.
 (pdftex.def)             Requested size: 180.09592pt x 141.54663pt.
-<Planning_psed.png, id=67, 847.7271pt x 534.798pt>
+<Planning_psed.png, id=66, 847.7271pt x 534.798pt>
 File: Planning_psed.png Graphic file (type png)
 <use Planning_psed.png>
-Package pdftex.def Info: Planning_psed.png  used on input line 302.
+Package pdftex.def Info: Planning_psed.png  used on input line 318.
 (pdftex.def)             Requested size: 180.09592pt x 113.60838pt.
-<Hunts_UC_2D.png, id=68, 1394.20876pt x 727.71875pt>
+<Hunts_UC_2D.png, id=67, 1394.20876pt x 727.71875pt>
 File: Hunts_UC_2D.png Graphic file (type png)
 <use Hunts_UC_2D.png>
-Package pdftex.def Info: Hunts_UC_2D.png  used on input line 307.
+Package pdftex.def Info: Hunts_UC_2D.png  used on input line 323.
 (pdftex.def)             Requested size: 180.09592pt x 93.99603pt.
-<obj_det.png, id=69, 1643.3897pt x 886.06032pt>
+<obj_det.png, id=68, 1643.3897pt x 886.06032pt>
 File: obj_det.png Graphic file (type png)
 <use obj_det.png>
-Package pdftex.def Info: obj_det.png  used on input line 312.
+Package pdftex.def Info: obj_det.png  used on input line 328.
 (pdftex.def)             Requested size: 180.09592pt x 97.10188pt.
-<map_psed_hunt.png, id=70, 1040.38687pt x 380.92313pt>
+<map_psed_hunt.png, id=69, 1040.38687pt x 380.92313pt>
 File: map_psed_hunt.png Graphic file (type png)
 <use map_psed_hunt.png>
-Package pdftex.def Info: map_psed_hunt.png  used on input line 321.
+Package pdftex.def Info: map_psed_hunt.png  used on input line 337.
 (pdftex.def)             Requested size: 487.8192pt x 178.60957pt.
- [3.3 <./flow_chart.png> <./system.png> <./Planning_psed.png (PNG copy)> <./Hunts_UC_2D.png> <./obj_det.png>] (asmeconf-template.bbl
+ [3.3 <./flow_chart.png> <./system.png>] (asmeconf-template.bbl
 Underfull \hbox (badness 1400) in paragraph at lines 19--24
 \T1/ntxtlf/m/n/10 Jian.  ``Deep Resid-ual Learn-ing for Im-age Recog-ni-
  []
 
-)
+) [4.4 <./Planning_psed.png (PNG copy)> <./Hunts_UC_2D.png> <./obj_det.png>]
 \openout3 = `asmeconf-template.pyg'.
 
  (_minted-asmeconf-template/default.pygstyle) (_minted-asmeconf-template/A44FE3CDDAA1464C58D83F615E842BD7425B84523471D2BF05D9AF584B075D2E.pygtex
@@ -1950,7 +1952,20 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (C:\Users\13037\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [4.4 <./map_psed_hunt.png (PNG copy)>] (asmeconf-template.aux)
+)
+- LAST -
+Extra skip:466.95543pt
+Left:466.95543pt/0.0pt
+Right:0.0pt/0.0pt
+Split: 233.4777pt
+Output:233.4777pt
+Pageshrink: 0.0pt
+Pagestretch: 0.0pt
+@colht:466.95543pt
+FLUSHEND [output]: 233.4777pt
+FLUSHEND [leftcolumn badness]: 1000000
+FUSHEND [rightcolumn badness]: 0
+ [5.5 <./map_psed_hunt.png (PNG copy)>] (asmeconf-template.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1958,17 +1973,17 @@ runsystem(del asmeconf-template.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29460 strings out of 478552
- 486295 string characters out of 2841938
- 849213 words of memory out of 3000000
+ 29463 strings out of 478552
+ 486318 string characters out of 2841938
+ 849373 words of memory out of 3000000
  47071 multiletter control sequences out of 15000+600000
- 549898 words of font info for 133 fonts, out of 8000000 for 9000
+ 550271 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,12n,90p,896b,2111s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}<C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txbsys.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtxsf/zsfmia-reg.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on asmeconf-template.pdf (4 pages, 7058826 bytes).
+ 83i,12n,90p,909b,2111s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}<C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txbsys.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtxsf/zsfmia-reg.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/13037/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
+Output written on asmeconf-template.pdf (5 pages, 7064184 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
